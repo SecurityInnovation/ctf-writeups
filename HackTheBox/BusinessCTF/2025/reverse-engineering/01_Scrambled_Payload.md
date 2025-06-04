@@ -131,14 +131,14 @@ def fully_deobfuscate(input_content: str) -> None:
     Deobfuscate all Chr() patterns
     """
 
-    # Pass 1: Complex Regex Patterns (built usign regex101.com)
+    # Pass 1: Complex Regex Patterns (built using regex101.com)
     # e.g: Chr((197*55)mod 256)&
     complex_chr_pattern = r"Chr\(\((\d+)(\D)(\d+)\)\s*mod\s*\d*\)"
     deobfuscated_content = re.sub(complex_chr_pattern, deobfuscate_complex_chr, input_content)
 
     print(f"After Pass 1: Complex Chr DeObfuscation: \n{deobfuscated_content}")
     
-    # Pass 2: Simple Regex Patterns (built usign regex101.com)
+    # Pass 2: Simple Regex Patterns (built using regex101.com)
     # e.g: Chr(105)&
     simple_chr_pattern = r"Chr\((\d+)\)"
     deobfuscated_content = re.sub(simple_chr_pattern, deobfuscate_simple_chr, deobfuscated_content)
@@ -283,5 +283,5 @@ Overall, _Scrambled Payload_ was an enjoyable and educational reverse engineerin
 
 ---
 
-**Author**: Asif Iqbal Gazi
-**Event**: Business CTF 2025
+- **Author**: Asif Iqbal Gazi
+- **Event**: Business CTF 2025
